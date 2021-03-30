@@ -1,14 +1,14 @@
 import * as React from "react";
-import useMedia from "@/hooks/useMedia";
+import useDeviceScreen from "@/hooks/useDeviceScreen";
 
 const ResponsiveComponent = () => {
-	const { mediaIs } = useMedia();
+	const { deviceScreen } = useDeviceScreen();
 
 	return (
 		<p>
-			{mediaIs.pc && <span>PC</span>}
-			{mediaIs.tb && <span>Tablet</span>}
-			{mediaIs.sp && <span>Smartphone</span>}
+			{deviceScreen.pc && <span>PC</span>}
+			{deviceScreen.tb && <span>Tablet</span>}
+			{deviceScreen.sp && <span>Smartphone</span>}
 		</p>
 	);
 };
