@@ -1,4 +1,5 @@
-import ResponsiveComponent from '@/components/root/Button/ResponsiveComponent';
+import ResponsiveComponent from '@/components/root/ResponsiveComponent';
+import ThemeCmp from '@/components/root/ThemeCmp';
 import { css } from '@emotion/react';
 import Link from 'next/link'
 
@@ -13,6 +14,7 @@ const Home = () => {
     <section css={myStyle}>
       <Link href="/hello">To hello page</Link>
       <ResponsiveComponent />
+      <ThemeCmp />
     </section>
   );
 };
