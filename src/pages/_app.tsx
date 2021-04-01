@@ -1,12 +1,14 @@
 import { GlobalStyles } from '@/styles/Globals';
 import type { AppProps } from 'next/app';
-import React from 'react';
+import DarkThemeProvider from '@/providers/darkThemeProvider'
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   return (
     <>
       <GlobalStyles />
-      <Component {...pageProps} />
+      <DarkThemeProvider>
+        <Component {...pageProps} />
+      </DarkThemeProvider>
     </>
   );
 }
