@@ -3,12 +3,6 @@ import ThemeCmp from '@/components/root/ThemeCmp';
 import { css } from '@emotion/react';
 import Link from 'next/link'
 
-const myStyle = css`
-  color: hotpink;
-  font-size: 1rem;
-  font-weight: bold;
-`;
-
 const Home = () => {
   return (
     <section css={myStyle}>
@@ -18,5 +12,10 @@ const Home = () => {
     </section>
   );
 };
+
+const myStyle = css`
+  font-size: 3rem;
+  font-weight: bold;
+`;
 
 export default Home;
