@@ -21,6 +21,10 @@ const useDarkTheme = () => {
     }
   }, [])
 
+  useEffect(() => {
+    document.body.dataset.theme = isDark? 'dark' : 'light'
+  }, [isDark])
+
   return {
     isDark,
     setDarkTheme
