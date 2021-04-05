@@ -3,9 +3,9 @@ import useDarkTheme from '@/hooks/useDarkTheme'
 import DarkThemeContext from '@/providers/darkThemeContext'
 
 const DarkThemeProvider: FC = ({ children }) => {
-  const { isDark } = useDarkTheme()
+  const { isDark, setDarkTheme } = useDarkTheme()
 
-  return <DarkThemeContext.Provider value={{ isDark }}>{ children }</DarkThemeContext.Provider>
+  return <DarkThemeContext.Provider value={{ isDark, setDarkTheme }}>{ children }</DarkThemeContext.Provider>
 }
 
 export default DarkThemeProvider
