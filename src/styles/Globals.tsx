@@ -22,6 +22,19 @@ const globalCss = css`
   body[data-theme='dark'] {
     --colors-primary: deeppink;
     --colors-background: white;
+
+    /**
+     *  base
+     */
+    background-color: #444;
+    color: #e4e4e4;
+
+    a {
+      color: #e39777;
+    }
+    img {
+      filter: grayscale(30%);
+    }
   }
   body[data-theme='light'] {
     --colors-primary: lightpink;
