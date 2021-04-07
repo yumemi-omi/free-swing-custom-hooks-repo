@@ -6,7 +6,7 @@ const ThemeCmp = () => {
 
   return (
     <div css={theme(isDark)}>
-      <button onClick={() => setDarkTheme(prev=> !prev)}>ToggleTheme</button>
+      <button onClick={setDarkTheme}>ToggleTheme</button>
     </div>
   );
 };
