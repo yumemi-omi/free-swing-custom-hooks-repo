@@ -10,18 +10,32 @@ export const useNotification = (message: string) => {
   const [isGranted, setPermission] = useState(false)
 
   useEffect(() => {
-    switch (Notification.permission) {
-      case notificationPermission.default:
+    function checkNotificationPromise() {
+      try {
+        Notification.requestPermission().then();
+      } catch(e) {
+        return false;
+      }
+
+      return true;
+    }
+
+    // Let's check if the browser supports notifications
+    if (!('Notification' in window)) {
+      console.log("This browser does not support notifications.");
+    } else {
+      if(checkNotificationPromise()) {
         Notification.requestPermission()
-        break
-      case notificationPermission.granted:
-        new Notification(message)
-        setPermission(true)
-        break
-      case notificationPermission.denied:
-        alert('拒否設定')
-        setPermission(false)
-        break
+        .then((permission) => {
+          new Notification("new");
+          setPermission(true)
+        })
+      } else {
+        Notification.requestPermission(function(permission) {
+          new Notification("old");
+          setPermission(true)
+        });
+      }
     }
   }, [])
 
