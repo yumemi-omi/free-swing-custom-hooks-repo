@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import { useDarkThemeContext } from '@/providers/darkThemeProvider'
 import { css } from '@emotion/react'
+import Map from '@/components/root/Map'
 
 const Hello: FC = () => {
   const { isDark, setDarkTheme } = useDarkThemeContext()
@@ -10,6 +11,7 @@ const Hello: FC = () => {
       Applied { isDark? "DarkTheme" : "LightTheme" } by useDarkThemeContext
       <p css={themeColor}>This sentence is colorized by css-variables</p>
       <button onClick={setDarkTheme} css={buttonStyle}>Toggle theme</button>
+      <Map />
     </section>
   );
 };
