@@ -1,8 +1,8 @@
-import { useDarkThemeContext } from '@/providers/darkThemeProvider'
+import { useDarkThemeContext } from '@/providers/darkThemeProvider';
 import { css } from '@emotion/react';
 
 const ThemeCmpWithContext = () => {
-  const { isDark, setDarkTheme } = useDarkThemeContext()
+  const { isDark, setDarkTheme } = useDarkThemeContext();
 
   return (
     <div css={theme(isDark)}>
@@ -16,6 +16,6 @@ export function theme(isDark: boolean) {
     color: ${isDark ? '#4b5d67' : '#edeef7'};
     background: ${isDark ? '#322f3d' : '#7868e6'};
   `;
-};
+}
 
 export default ThemeCmpWithContext;
