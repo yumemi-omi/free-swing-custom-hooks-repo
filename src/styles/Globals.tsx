@@ -2,11 +2,7 @@ import { css, Global } from '@emotion/react';
 import { FC } from 'react';
 import 'ress';
 
-export const GlobalStyles: FC = () => (
-  <Global
-    styles={globalCss}
-  />
-);
+export const GlobalStyles: FC = () => <Global styles={globalCss} />;
 
 const globalCss = css`
   html,
@@ -40,4 +36,4 @@ const globalCss = css`
     --colors-primary: lightpink;
     --colors-background: black;
   }
-`
+`;

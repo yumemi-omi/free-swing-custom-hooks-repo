@@ -1,44 +1,44 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react';
 
 export const useNotification = (message: string) => {
-  const [isGranted, setPermission] = useState(false)
+  const [isGranted, setPermission] = useState(false);
 
   useEffect(() => {
     const checkNotificationPromise = () => {
       try {
-        Notification.requestPermission().then()
-      } catch(e) {
+        Notification.requestPermission().then();
+      } catch (e) {
         return false;
       }
       return true;
-    }
+    };
 
     const notify = () => {
-      new Notification(message)
-      setPermission(true)
-    }
+      new Notification(message);
+      setPermission(true);
+    };
 
     // Let's check if the browser supports notifications
     if (!('Notification' in window)) {
-      console.log("This browser does not support notifications.");
+      console.log('This browser does not support notifications.');
     } else {
       if (Notification.permission === 'granted') {
-        notify()
+        notify();
       } else if (Notification.permission !== 'denied') {
-        if(checkNotificationPromise()) {
+        if (checkNotificationPromise()) {
           Notification.requestPermission().then(() => {
-            notify()
-          })
+            notify();
+          });
         } else {
-          Notification.requestPermission(function() {
-            notify()
+          Notification.requestPermission(function () {
+            notify();
           });
         }
       }
     }
-  }, [])
+  }, []);
 
   return {
-    isGranted
-  }
-}
+    isGranted,
+  };
+};

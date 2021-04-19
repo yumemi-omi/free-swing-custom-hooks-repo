@@ -1,38 +1,38 @@
-import { useState, useEffect, useCallback} from 'react'
+import { useState, useEffect, useCallback } from 'react';
 
-const COLOR_SCHEME = '(prefers-color-scheme: dark)'
+const COLOR_SCHEME = '(prefers-color-scheme: dark)';
 
 const useDarkTheme = () => {
-  const [isDark, _setDarkTheme] = useState(false)
+  const [isDark, _setDarkTheme] = useState(false);
 
   const setDarkTheme = useCallback(() => {
-      _setDarkTheme(prev => !prev)
-    }, [])
+    _setDarkTheme((prev) => !prev);
+  }, []);
 
   useEffect(() => {
     const handler = (e: MediaQueryListEvent) => {
-      _setDarkTheme(e.matches)
-    }
+      _setDarkTheme(e.matches);
+    };
 
-    const matchMediaList = window.matchMedia(COLOR_SCHEME)
+    const matchMediaList = window.matchMedia(COLOR_SCHEME);
     // Setting up initial theme
-    _setDarkTheme(matchMediaList.matches)
+    _setDarkTheme(matchMediaList.matches);
 
     // To detect changing the user setting theme
-    matchMediaList.addEventListener('change', handler)
+    matchMediaList.addEventListener('change', handler);
     return () => {
-      matchMediaList.removeEventListener('change', handler)
-    }
-  }, [])
+      matchMediaList.removeEventListener('change', handler);
+    };
+  }, []);
 
   useEffect(() => {
-    document.body.dataset.theme = isDark? 'dark' : 'light'
-  }, [isDark])
+    document.body.dataset.theme = isDark ? 'dark' : 'light';
+  }, [isDark]);
 
   return {
     isDark,
-    setDarkTheme
-  }
-}
+    setDarkTheme,
+  };
+};
 
-export default useDarkTheme
+export default useDarkTheme;
