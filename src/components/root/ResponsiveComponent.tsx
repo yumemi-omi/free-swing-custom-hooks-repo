@@ -1,7 +1,7 @@
-import * as React from 'react';
 import useDeviceScreen from '@/hooks/useDeviceScreen';
+import { VFC } from 'react';
 
-const ResponsiveComponent = () => {
+const ResponsiveComponent: VFC = () => {
   const { deviceScreen } = useDeviceScreen();
 
   return (

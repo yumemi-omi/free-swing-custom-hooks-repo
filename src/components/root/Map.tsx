@@ -1,6 +1,7 @@
 import { useGeolocation } from '@/hooks/useGeolocation';
+import { VFC } from 'react';
 
-const Map = () => {
+const Map: VFC = () => {
   const { location, stopWatchLoaction } = useGeolocation();
   return (
     <div>

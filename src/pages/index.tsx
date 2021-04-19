@@ -4,8 +4,9 @@ import ThemeCmpWithContext from '@/components/root/ThemeCmpWithContext';
 import NotificationCmp from '@/components/root/NotificationCmp';
 import { css } from '@emotion/react';
 import Link from 'next/link';
+import { VFC } from 'react';
 
-const Home = () => {
+const Home: VFC = () => {
   return (
     <section css={myStyle}>
       <Link href="/hello">To hello page</Link>

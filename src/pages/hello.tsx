@@ -1,9 +1,9 @@
-import { FC } from 'react';
+import { VFC } from 'react';
 import { useDarkThemeContext } from '@/providers/darkThemeProvider';
 import { css } from '@emotion/react';
 import Map from '@/components/root/Map';
 
-const Hello: FC = () => {
+const Hello: VFC = () => {
   const { isDark, setDarkTheme } = useDarkThemeContext();
 
   return (
