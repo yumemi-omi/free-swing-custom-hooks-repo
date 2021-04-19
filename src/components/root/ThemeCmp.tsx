@@ -1,7 +1,8 @@
 import useDarkTheme from '@/hooks/useDarkTheme';
 import { css } from '@emotion/react';
+import { VFC } from 'react';
 
-const ThemeCmp = () => {
+const ThemeCmp: VFC = () => {
   const { isDark, setDarkTheme } = useDarkTheme();
 
   return (
