@@ -10,6 +10,7 @@ const Home: VFC = () => {
   return (
     <section css={myStyle}>
       <Link href="/hello">To hello page</Link>
+      <Link href="/dnd">To dnd page</Link>
       <ResponsiveComponent />
       <ThemeCmp />
       <ThemeCmpWithContext />
