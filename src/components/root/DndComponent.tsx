@@ -10,6 +10,7 @@ const imageList: string[] = [
   'http://placehold.jp/ffeb99/003366/150x150.png',
   'http://placehold.jp/ffc299/003366/150x150.png',
   'http://placehold.jp/ff9e99/003366/150x150.png',
+  'http://placehold.jp/ff8e99/003376/150x150.png',
 ];
 
 const DndComponent = () => {
@@ -18,8 +19,8 @@ const DndComponent = () => {
   return (
     <div css={bodyStyle}>
       <ul css={listStyle}>
-        {results.map((item, index) => (
-          <li css={imageCardStyle} key={index} {...item.events}>
+        {results.map((item) => (
+          <li css={imageCardStyle} key={item.key} {...item.events}>
             <img src={item.value} alt={item.value} css={imageStyle} />
           </li>
         ))}
@@ -46,13 +47,13 @@ const listStyle = css`
 `;
 
 const imageCardStyle = css`
-  cursor: pointer;
+  cursor: grab;
   user-select: none;
   width: 100px;
   height: 130px;
   overflow: hidden;
   border-radius: 5px;
-  margin: 3;
+  margin: 3px;
 `;
 
 const imageStyle = css`
