@@ -5,6 +5,7 @@ import NotificationCmp from '@/components/root/NotificationCmp';
 import { css } from '@emotion/react';
 import Link from 'next/link';
 import { VFC } from 'react';
+import ResizeTextarea from '@/components/root/ResizeTextarea';
 
 const Home: VFC = () => {
   return (
@@ -15,6 +16,7 @@ const Home: VFC = () => {
       <ThemeCmp />
       <ThemeCmpWithContext />
       <NotificationCmp />
+      <ResizeTextarea />
     </section>
   );
 };
