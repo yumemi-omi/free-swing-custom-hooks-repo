@@ -5,13 +5,37 @@ import 'ress';
 export const GlobalStyles: FC = () => <Global styles={globalCss} />;
 
 const globalCss = css`
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
   html,
   body {
-    padding: 3rem 1rem;
+    width: 100%;
+    height: 100%;
+  }
+
+  html {
+    overscroll-behavior: none;
     margin: 0;
-    min-height: 100%;
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: 16px;
+    padding: 0;
+    font-size: 62.5%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    position: relative;
+    background-color: #cccccc;
+    color: #070707;
+    font-family: sans-serif;
+    font-size: 2rem;
+    line-height: 1.6;
+    text-align: left;
   }
 
   // For theme
