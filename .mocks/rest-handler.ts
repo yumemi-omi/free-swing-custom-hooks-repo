@@ -6,16 +6,16 @@ export const handlers = [
     return res(ctx.status(200));
   }),
   rest.get('/user', (_, res, ctx) => {
-    const isAuthenticated = sessionStorage.getItem('is-authenticated');
+    // const isAuthenticated = sessionStorage.getItem('is-authenticated');
 
-    if (!isAuthenticated) {
-      return res(
-        ctx.status(403),
-        ctx.json({
-          errorMessage: 'Not authorized',
-        })
-      );
-    }
+    // if (!isAuthenticated) {
+    //   return res(
+    //     ctx.status(403),
+    //     ctx.json({
+    //       errorMessage: 'Not authorized',
+    //     })
+    //   );
+    // }
 
     return res(
       ctx.status(200),
