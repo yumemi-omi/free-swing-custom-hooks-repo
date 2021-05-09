@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { VFC } from 'react';
 import ResizeTextarea from '@/components/root/ResizeTextarea';
 import type { GetServerSideProps } from 'next';
-import { useRequest } from '@/lib/useRequest';
+import useRequest from '@/lib/useRequest';
 
 const Home: VFC = () => {
   const data = useRequest({ url: '/user', method: 'get' });
