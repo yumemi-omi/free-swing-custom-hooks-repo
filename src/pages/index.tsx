@@ -6,6 +6,7 @@ import { css } from '@emotion/react';
 import Link from 'next/link';
 import { VFC } from 'react';
 import ResizeTextarea from '@/components/root/ResizeTextarea';
+import FullScreen from '@/components/root/FullScreen';
 import type { GetServerSideProps } from 'next';
 import useRequest from '@/lib/useRequest';
 
@@ -22,6 +23,7 @@ const Home: VFC = () => {
       <ThemeCmpWithContext />
       <NotificationCmp />
       <ResizeTextarea />
+      <FullScreen />
     </section>
   );
 };
