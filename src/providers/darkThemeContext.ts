@@ -1,8 +1,9 @@
-import { createContext } from 'react'
+import { createContext } from 'react';
 
 const DarkThemeContext = createContext({
   isDark: false,
-  setDarkTheme: () => {}
-})
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  setDarkTheme: () => {},
+});
 
-export default DarkThemeContext
+export default DarkThemeContext;

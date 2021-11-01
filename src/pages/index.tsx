@@ -1,18 +1,37 @@
 import ResponsiveComponent from '@/components/root/ResponsiveComponent';
 import ThemeCmp from '@/components/root/ThemeCmp';
 import ThemeCmpWithContext from '@/components/root/ThemeCmpWithContext';
+import NotificationCmp from '@/components/root/NotificationCmp';
 import { css } from '@emotion/react';
-import Link from 'next/link'
+import Link from 'next/link';
+import { VFC } from 'react';
+import ResizeTextarea from '@/components/root/ResizeTextarea';
+import FullScreen from '@/components/root/FullScreen';
+import type { GetServerSideProps } from 'next';
+import useRequest from '@/lib/useRequest';
 
-const Home = () => {
+const Home: VFC = () => {
+  const data = useRequest({ url: '/user', method: 'get' });
+  console.log({ data });
+
   return (
     <section css={myStyle}>
       <Link href="/hello">To hello page</Link>
+      <Link href="/dnd">To dnd page</Link>
       <ResponsiveComponent />
       <ThemeCmp />
       <ThemeCmpWithContext />
+      <NotificationCmp />
+      <ResizeTextarea />
+      <FullScreen />
     </section>
   );
+};
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  // const data = await getRequestInstance('http://localhost:3000/user');
+  // console.log(data);
+  return { props: {} };
 };
 
 const myStyle = css`

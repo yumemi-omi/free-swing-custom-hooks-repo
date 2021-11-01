@@ -1,4 +1,5 @@
-module.exports = {
+/** @type {import('@typescript-eslint/experimental-utils').TSESLint.Linter.Config} */
+const config = {
   parser: '@typescript-eslint/parser',
   plugins: [
     '@emotion',
@@ -13,8 +14,7 @@ module.exports = {
     'plugin:react-hooks/recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:prettier/recommended',
-    'prettier/@typescript-eslint',
-    'prettier/react',
+    'prettier',
   ],
   env: {
     browser: true,
@@ -35,4 +35,6 @@ module.exports = {
     'react-hooks/exhaustive-deps': 'warn',
     "@emotion/pkg-renaming": "error",
   },
-};
+}
+
+module.exports = config
