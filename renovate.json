@@ -1,7 +1,4 @@
 {
-  "extends": [
-    "config:base"
-  ],
   "baseBranches": ["develop"],
   "timezone": "Asia/Tokyo",
   "schedule": "every weekend",
