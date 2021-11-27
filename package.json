@@ -24,7 +24,7 @@
     "@emotion/babel-plugin": "11.3.0",
     "@emotion/eslint-plugin": "^11.5.0",
     "@types/node": "16.11.10",
-    "@types/react": "17.0.36",
+    "@types/react": "17.0.37",
     "@typescript-eslint/eslint-plugin": "5.4.0",
     "@typescript-eslint/parser": "5.4.0",
     "eslint": "8.1.0",
